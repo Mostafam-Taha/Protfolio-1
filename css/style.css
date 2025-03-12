@@ -83,10 +83,6 @@ p {
     align-items: center;
 }
 
-.header .navbar .nav-links {
-    display: none;
-}
-
 /* لو كنت تحتاج قسم الهيدر يظهر فى حجم الهاتف إللغى التعليق الخاص بهذا العنصر الذي تحت هذا التعليق */
 
 /* @media (max-width: 425px) {
@@ -306,66 +302,6 @@ p {
     font-size: 14px;
 }
 
-.services {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 1s ease-out;
-}
-
-.services.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.services .title,
-.services .service {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.8s ease-out;
-}
-
-.services.visible .title {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0.3s;
-}
-
-.services.visible .service:nth-child(1) {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0.6s;
-}
-
-.services.visible .service:nth-child(2) {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0.9s;
-}
-
-.services.visible .service:nth-child(3) {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 1.2s;
-}
-
-.services.visible .service:nth-child(4) {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 1.5s;
-}
-
-.services.visible .service:nth-child(5) {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 1.8s;
-}
-
-.services.visible .service:nth-child(6) {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 2.1s;
-}
-
 /* Style About Me */
 .about-me {
     margin: var(--br-margin);
@@ -575,65 +511,6 @@ p {
     margin: 5px 0;
 }
 
-.protfolio {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 1s ease-out;
-}
-
-.protfolio.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.protfolio .title,
-.protfolio .offic {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.8s ease-out;
-}
-
-.protfolio.visible .title {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0.3s;
-}
-
-.protfolio.visible .offic:nth-child(1) {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0.6s;
-}
-
-.protfolio.visible .offic:nth-child(2) {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0.9s;
-}
-
-.protfolio.visible .offic:nth-child(3) {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 1.2s;
-}
-
-.protfolio.visible .offic:nth-child(4) {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 1.5s;
-}
-
-.protfolio.visible .offic:nth-child(5) {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 1.8s;
-}
-
-.protfolio.visible .offic:nth-child(6) {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 2.1s;
-}
 /* Style Testimonials */
 .testimonials {
     margin: var(--br-margin);
@@ -954,8 +831,30 @@ p {
     }
 }
 
+@media (max-width: 804px ) {
+    .home, .services, .about-me, .protfolio, .testimonials, .contact {
+        margin: 0 15px;
+    }
+
+    .home .container .flex-rg h1 {
+        font-size: 36px;
+    }
+
+    .home.visible .flex-la img {
+        width: 350px;
+    }
+
+    .about-me .container .about-sec .about-img img {
+        width: 370px;
+    }
+
+    .protfolio .container .offic img {
+        width: 300px;
+    }
+}
+
 @media (max-width: 768px ) {
-    .home, .services, .about-me, .protfolio, .testimonials, .contact, .main-bar .skills-container {
+    .home, .services, .about-me, .protfolio, .testimonials, .contact, .main-bar .skills-container, .footer .container  {
         margin: 0 50px;
     }
 
@@ -1019,13 +918,96 @@ p {
     }
 }
 
-@media (max-width: 425px ) {
+@media (max-width: 640px ) {
+    .home, .services, .about-me, .protfolio, .testimonials, .contact, .main-bar .skills-container, .footer .container  {
+        margin: 0 30px;
+    }
+
+    .home .container .flex-rg h1 {
+        font-size: 32px;
+    }
+
+    .home.visible .flex-la img {
+        width: 350px;
+    }
+
+    .home .container .cirtor {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        background-color: var(--primary-color);
+        filter: blur(120px);
+        border-radius: 50%;
+        top: 30%;
+        right: -140px;
+        z-index: -1000;
+    }
+
+    .services .container .contact-sec .services-box {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        text-align: center;
+    }
+
+    .about-me .container .about-sec .about-img img {
+        width: 300px;
+    }
+
+    .main-bar .skills-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .protfolio .container .offic img {
+        width: 285px;
+    }
+
+    .protfolio .container .flex-off {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .testimonials .container {
+        margin: 0 0 75px 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .contact .container .form-contact {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 36px;
+        box-sizing: border-box;
+        width: 100%;
+    }
+}
+
+@media (max-width: 430px ) {
     .header .navbar {
         text-align: center;
     }
 
-    .home, .services, .about-me, .protfolio, .testimonials, .contact, .main-bar .skills-container {
+    .home .container {
+        margin: 75px 0 150px 0;
+    }
+    
+    .header .navbar .nav-links {
+        display: none;
+    }
+
+    .home, .services, .about-me, .protfolio, .testimonials, .main-bar .skills-container, .footer .container {
         margin: 0 20px;
+    }
+
+    .contact {
+        margin: 0 35px 0 15px !important;
     }
 
     /* .home .container .welcome {
@@ -1103,6 +1085,395 @@ p {
         gap: 36px;
         box-sizing: border-box;
         width: 100%;
+    }
+}
+
+@media (max-width: 425px ) {
+    .header .navbar {
+        text-align: center;
+    }
+
+    .home .container {
+        margin: 75px 0 150px 0;
+    }
+    
+    .header .navbar .nav-links {
+        display: none;
+    }
+
+    .home, .services, .about-me, .protfolio, .testimonials, .main-bar .skills-container, .footer .container {
+        margin: 0 20px;
+    }
+
+    .contact {
+        margin: 0 35px 0 15px !important;
+    }
+
+    /* .home .container .welcome {
+        text-align: center;
+    } */
+
+    .home .container .flex-rg h1 {
+        font-size: 28px;
+    }
+
+    .home.visible .flex-la img {
+        /* width: 350px; */
+        display: none;
+    }
+
+    .home .container .cirtor {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        background-color: var(--primary-color);
+        filter: blur(120px);
+        border-radius: 50%;
+        top: 30%;
+        right: -140px;
+        z-index: -1000;
+    }
+
+    .services .container .contact-sec .services-box {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 15px;
+        text-align: center;
+    }
+
+    .about-me .container .about-sec {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .main-bar .skills-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .about-me .container .about-sec .about-img img {
+        width: 300px;
+    }
+
+    .protfolio .container .offic img {
+        width: 395px;
+    }
+
+    .protfolio .container .flex-off {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 15px;
+    }
+
+    .testimonials .container {
+        margin: 0 0 75px 0;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 15px;
+    }
+
+    .contact .container .form-contact {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 36px;
+        box-sizing: border-box;
+        width: 100%;
+    }
+}
+
+@media (max-width: 393px ) {
+    .header .navbar {
+        text-align: center;
+    }
+
+    .home .container {
+        margin: 75px 0 150px 0;
+    }
+    
+    .header .navbar .nav-links {
+        display: none;
+    }
+
+    .home, .services, .about-me, .protfolio, .testimonials, .main-bar .skills-container, .footer .container {
+        margin: 0 20px;
+    }
+
+    .contact {
+        margin: 0 35px 0 15px !important;
+    }
+
+    .home .container .flex-rg h1 {
+        font-size: 28px;
+    }
+
+    .home.visible .flex-la img {
+        display: none;
+    }
+
+    .home .container .cirtor {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        background-color: var(--primary-color);
+        filter: blur(120px);
+        border-radius: 50%;
+        top: 30%;
+        right: -140px;
+        z-index: -1000;
+    }
+
+    .services .container .contact-sec .services-box {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 15px;
+        text-align: center;
+    }
+
+    .about-me .container .about-sec {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .main-bar .skills-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .about-me .container .about-sec .about-img img {
+        width: 300px;
+    }
+
+    .protfolio .container .offic img {
+        width: 360px;
+    }
+
+    .protfolio .container .flex-off {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 15px;
+    }
+
+    .testimonials .container {
+        margin: 0 0 75px 0;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 15px;
+    }
+
+    .contact .container .form-contact {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 36px;
+        box-sizing: border-box;
+        width: 100%;
+    }
+}
+
+@media (max-width: 375px ) {
+    .header .navbar {
+        text-align: center;
+    }
+    
+    .header .navbar .nav-links {
+        display: none;
+    }
+
+    .home, .services, .about-me, .protfolio, .testimonials, .contact, .main-bar .skills-container, .footer .container {
+        margin: 0 15px;
+    }
+
+    .contact {
+        margin: 0 35px 0 15px !important;
+    }
+
+    .home .container .flex-rg h1 {
+        font-size: 28px;
+    }
+
+    .home.visible .flex-la img {
+        display: none;
+    }
+
+    .home .container .cirtor {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        background-color: var(--primary-color);
+        filter: blur(120px);
+        border-radius: 50%;
+        top: 30%;
+        right: -160px;
+        z-index: -1000;
+    }
+
+    .services .container .contact-sec .services-box {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 15px;
+        text-align: center;
+    }
+
+    .about-me .container .about-sec {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .main-bar .skills-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .about-me .container .about-sec .about-img img {
+        width: 300px;
+    }
+
+    .protfolio .container .offic img {
+        width: 350px;
+    }
+
+    .protfolio .container .flex-off {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 15px;
+    }
+
+    .testimonials .container {
+        margin: 0 0 75px 0;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 15px;
+    }
+
+    .contact .container .form-contact {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 26px;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .footer .container .sections-sw .nav-links {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+    }
+}
+
+@media (max-width: 320px ) {
+    .header .navbar {
+        text-align: center;
+    }
+    
+    .header .navbar .nav-links {
+        display: none;
+    }
+
+    .home, .services, .about-me, .protfolio, .testimonials, .contact, .main-bar .skills-container, .footer .container {
+        margin: 0 10px;
+    }
+
+    .contact {
+        margin: 0 35px 0 15px !important;
+    }
+
+    .home .container .flex-rg h1 {
+        font-size: 24px;
+    }
+
+    .home.visible .flex-la img {
+        display: none;
+    }
+
+    .home .container .flex-rg a {
+        padding: 8.5px 12.5px;
+    }
+
+    .home .container .cirtor {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        background-color: var(--primary-color);
+        filter: blur(120px);
+        border-radius: 50%;
+        top: 30%;
+        right: -160px;
+        z-index: -1000;
+    }
+
+    .services .container .contact-sec .services-box {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 15px;
+        text-align: center;
+    }
+
+    .about-me .container .about-sec {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .main-bar .skills-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .about-me .container .about-sec .about-img img {
+        width: 300px;
+    }
+
+    .protfolio .container .offic img {
+        width: 300px;
+    }
+
+    .protfolio .container .flex-off {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 15px;
+    }
+
+    .testimonials .container {
+        margin: 0 0 75px 0;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 15px;
+    }
+
+    .contact .container .form-contact {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 26px;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .footer .container .sections-sw .nav-links {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
     }
 }
 
